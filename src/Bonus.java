@@ -10,14 +10,14 @@ public class Bonus {
         // In de code staan op verschillende plekken comments tussen "/*...*/" als hint wat je moet doen
 
 
-        HashSet<Integer> secretnumber = randomnumbergenerator();
-        String stringnumber = setToStringConverter(secretnumber);
-        System.out.println(stringnumber);
-        feedback(/*vul hier het juiste argument in*/);
+//        HashSet<Integer> secretnumber = randomnumbergenerator();
+//        String stringnumber = setToStringConverter(secretnumber);
+//        System.out.println(stringnumber);
+//        feedback(/*vul hier het juiste argument in*/);
+//
+//    }
 
-    }
-
-    public static void/*moet dit returntype "void" zijn of wat anders?*/ randomnumbergenerator(/*Heeft deze methode nog parameter(s) nodig?*/){
+//    public static void/*moet dit returntype "void" zijn of wat anders?*/ randomnumbergenerator(/*Heeft deze methode nog parameter(s) nodig?*/){
          /*
         Vul hier de body van de methode in.
 
@@ -29,7 +29,7 @@ public class Bonus {
          */
     }
 
-    public static void/*moet dit returntype "void" zijn of wat anders?*/ setToStringConverter(/*Heeft deze methode nog parameter(s) nodig?*/){
+//    public static void/*moet dit returntype "void" zijn of wat anders?*/ setToStringConverter(/*Heeft deze methode nog parameter(s) nodig?*/){
         /*
         Vul hier de body van de methode in.
 
@@ -38,7 +38,7 @@ public class Bonus {
         - Schrijf vervolgens een for-loop om de items in de hashset een voor een aan de String variabele toe te voegen.
         - Return de (gevulde) String variabele
          */
-    }
+//    }
 
 
 
