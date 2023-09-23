@@ -50,8 +50,17 @@ public class Bonus {
                 String guess = scanner.nextLine(); // Slaat de input van de gebruiker op in een variabele
                 Integer.parseInt(guess); // Probeert van de input integers te maken, dit lukt alleen als de input bestaat uit getallen
 
-                if (guess.length() != 4) { // De lengte van de input moet precies 4 getallen zijn
-                    System.out.println("Je moet precies 4 getallen invoeren"); // Als dat niet het geval is, ziet de gebruiker deze foutmelding
+                HashSet<Character> uniqueDigits = new HashSet<>(); // Nog een HashSet maken, maar dan van chars, om deze te kunnen vergelijken
+                boolean hasDuplicates = false; // in principe mogen er geen dubbele getallen in de opgegeven reeks zitten
+                for (char digit : guess.toCharArray()) { // Itereert langs alle getallen in de array en zet ze om in een char array
+                    if (!uniqueDigits.add(digit)) { // Voegt de cijfers toe aan de set, maar dit kan niet als het cijfer al in de set zit
+                        hasDuplicates = true; // True als er dubbele cijfers zijn
+                        break; // Stopt de loop
+                    }
+                }
+
+                if (guess.length() != 4 || hasDuplicates) { // Indien er niet voldaan wordt aan een van deze condities (lengte anders dan 4, dubbele getallen)
+                    System.out.println("Je moet precies vier verschillende getallen invoeren."); // Als dat niet het geval is, ziet de gebruiker deze foutmelding
                     continue; // Gaat verder naar de volgende iteratie van de while loop
                 }
                 if (Objects.equals(guess, stringNumber)) { // Als je input van de gebruiker gelijk is aan de eerder gedefinieerde reeks van 4 getallen...
