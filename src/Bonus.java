@@ -8,12 +8,21 @@ import java.util.Scanner;
 public class Bonus {
 
     public static void main(String[] args) {
+        boolean play = true; // Geeft aan dat het spel bezig is
 
-        // Hier worden alle gebruikte methodes aangeroepen, die daaronder worden gedefinieerd
-        HashSet<Integer> secretNumber = randomNumberGenerator();
-        String stringNumber = setToString(secretNumber);
-        System.out.println(stringNumber);
-        feedback(stringNumber);
+        while (play) {
+            // Hier worden alle gebruikte methodes aangeroepen, die daaronder worden gedefinieerd
+            HashSet<Integer> secretNumber = randomNumberGenerator();
+            String stringNumber = setToString(secretNumber);
+            // System.out.println(stringNumber); // Deze was handig bij het testen, maar staat nu uit, anders krijgt de gebruiker het te raden nummer al te zien...
+            feedback(stringNumber); // User input wordt meegegeven aan de feedback methode
+            System.out.println("Wil je nog een keer spelen? (ja/nee)"); // Als het getal is geraden krijgt de gebruiker deze vraag
+            Scanner scanner = new Scanner(System.in);
+            String response = scanner.nextLine().toLowerCase(); // toLowerCase zorgt ervoor dat het niet uitmaakt of de gebruiker hoofletters of kleine letters ingeeft
+            if (!response.equals("ja")) { // Alle antwoorden anders dan ja zetten play op false en het programma stopt. Bij "ja" begint het opnieuw
+                play = false;
+            }
+        }
     }
 
     public static HashSet<Integer> randomNumberGenerator() { // De return value is de HashSet<Integer>, er zijn geen parameters mee te geven.

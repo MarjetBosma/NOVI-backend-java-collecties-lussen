@@ -17,13 +17,13 @@ public class Main {
             System.out.println("Type 'x' om te stoppen \nType 'v' om te vertalen");
             String input = scanner.nextLine(); // Aanspreken van de scanner
 
-            if (input.equals("x")) {
+            if (input.equalsIgnoreCase("x")) {
                 play = false; // Stopt de uitvoer van de translator
-            } else if (input.equals("v")) {
+            } else if (input.equalsIgnoreCase("v")) {
                 System.out.println("Type een cijfer van 0 t/m 9");
                 int number = scanner.nextInt(); // Haalt de waarde voor number uit de input van de gebruiker
                 scanner.nextLine();
-                if (number < 10) {
+                if (number < 10 && number >= 0) {
                     String result = t1.translate(number); // Slaat resultaat op als string
                     System.out.println("De vertaling van " + number + " is " + result); // Geeft resultaat terug aan de gebruiker
                 } else {
